@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hostelmania</title>
+        
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/app.css">
+        
+    </head>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/hostels"><i size="massive" class="hire a helper icon"></i>Hostelmania</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/"><i size="mid" class="home icon"></i> Home <span class="sr-only">(current)</span></a>
+                </li>
+              </ul>
+
+              <ul class=" nav navbar-nav navbar-right">
+                <%if(!currentuser){%>
+                  <li class="nav-item"><a class="nav-link" href="/login"><i size="mid" class="sign in alternate icon"></i>LogIn</a></li>
+                  <li class="nav-item"><a class="nav-link" href="/register"><i size="mid" class="user circle icon"></i>SignUp</a></li>
+                <%} else {%>
+                  <li><a href="#">Signed In As <%= currentuser.username %></a></li>
+                  <li class="nav-item"><a class="nav-link" href="/logout"><i size="mid" class="sign out alternate icon"></i>LogOut</a></li>
+                <%}%>
+              </ul>
+             
+            </div>
+          </nav>
+    
+          <div class="container">
+            <% if(error && error.length>0){%>
+          <div class="alert alert-danger" role="alert">
+            <%=error%>
+        </div>
+        <%}%>
+        <% if(success && success.length>0){%>
+        <div class="alert alert-success" role="alert">
+          <%=success%>
+      </div>
+      <%}%>
+      </div>

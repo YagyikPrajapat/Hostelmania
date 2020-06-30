@@ -1,0 +1,30 @@
+<%- include ("partials/header") %>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Welcome To Hostelmania</h1>
+      <hr>
+      <p class="lead">Choose Your Hostel!</p>
+      <a href="/hostels/new" class="btn btn-lg btn-primary">Add New Hostel</a>
+    
+    </div>
+  </div>
+ 
+  <div class="ui grid container">
+    <div class="four column row">
+ 
+     
+    <%for(var i=0;i<hostels.length;i++){%>
+    <div class="cards column"> <div class="card"  style="width: 18rem;">
+              
+              
+      <h2 class="card-title"><%=hostels[i].name.toUpperCase()%></h2>
+      <img class="card-img-top" src="<%=hostels[i].image%>" >
+      <div class="card-body">
+      <h3 class="card-text"><%=hostels[i].place.toUpperCase()%></h3>
+      <a href="/hostels/<%=hostels[i]._id%>" class="btn btn-xs btn-primary">More Info</a>
+    </div>
+  </div></div><%}%></div> </div>
+ </div>
+</div>
+<%- include ("partials/footer") %>
+

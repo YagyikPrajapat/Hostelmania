@@ -1,0 +1,43 @@
+<%- include ("partials/header") %>
+
+<div class="ui three column grid">
+    <div class="column">
+      
+    </div>
+    <div class="column">
+      <div class="ui segment">
+        <div class="ui inverted segment">
+            <h1 class="display-4">EDIT <%=hostel.name.toUpperCase()%> HOSTEL</h1>
+            <form class="ui inverted form" action="/hostels/<%=hostel._id%>?_method=PUT" method="POST">
+                <div class="field">
+                  <label>Name</label>
+                  <input type="text" value="<%=hostel.name%>" name="hostel[name]">
+                </div>
+                <div class="field">
+                  <label>Image</label>
+                  <input type="text"  value="<%=hostel.image%>" name="hostel[image]">
+                </div>
+                <div class="field">
+                    <label>Place</label>
+                    <input type="text"  value="<%=hostel.place%>" name="hostel[place]">
+                  </div>
+                  <div class="field">
+                    <label>Price</label>
+                    <input type="number"  value="<%=hostel.price%>" name="hostel[price]" min="0.01" step="0.01"> 
+                  </div>
+                  <div class="field">
+                    <label>Description</label>
+                    <input id="description" type="text"  value="<%=hostel.description%>" name="hostel[description]">
+                  </div>
+                <button class="ui violet big basic button" type="submit">Submit</button>
+              </form>
+            </div>
+      </div>
+    </div>
+    <div class="column">
+      
+    </div>
+  </div>
+
+ 
+<%- include ("partials/footer") %>

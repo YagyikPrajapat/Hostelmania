@@ -1,0 +1,45 @@
+
+<%- include ("partials/header") %>
+
+<div class="ui three column grid">
+    <div class="column">
+      
+    </div>
+    <div class="column">
+      <div class="ui segment">
+        <div class="ui inverted segment">
+            <h1 class="display-4">Add New Hostel</h1>
+            <form class="ui inverted form" action="/hostels" method="POST">
+                <div class="field">
+                  <label>Name</label>
+                  <input type="text" placeholder="name" name="name">
+                </div>
+                <div class="field">
+                  <label>Image</label>
+                  <input type="text"  placeholder="image url" name="image">
+                </div>
+                <div class="field">
+                    <label>Place</label>
+                    <input type="text"  placeholder="place" name="place">
+                  </div>
+                  <div class="field">
+                    <label>Price</label>
+                    <input type="number"  placeholder="price" name="price" min="0.01" step="0.01"> 
+                  </div>
+                  <div class="field">
+                    <label>Description</label>
+                    <textarea type="text"  placeholder="description" name="description"></textarea>
+                  </div>
+                <button class="ui violet big basic button" type="submit">Submit</button>
+              </form>
+            </div>
+      </div>
+    </div>
+    <div class="column">
+      
+    </div>
+  </div>
+
+
+ 
+<%- include ("partials/footer") %>
